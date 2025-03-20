@@ -1,0 +1,39 @@
+.imagenContainer {
+    width: 250px;  /* Tamaño de la imagen */
+    height: 300px; /* Tamaño de la imagen */
+    position: relative;
+    overflow: active;
+    border-radius: 10px; /* Opcional: redondea las esquinas */
+    transition: transform 0.3s ease; /* Transición para el hover */
+  }
+  
+  .imagen {
+    width: 100%;      /* Hace que la imagen ocupe todo el contenedor */
+    height: 100%;     /* Hace que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Mantiene la imagen sin deformarla */
+    transition: transform 0.3s ease; /* Efecto suave para el hover */
+  }
+  
+  .imagenContainer:hover .imagen {
+    transform: scale(1.1); /* Agranda la imagen al pasar el mouse */
+    border: 2px solid #b598ed;
+  }
+  .cardbutton {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 2rem;
+    border: none;
+    background-color: #b598ed;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.4s ease-out;
+   }
+   .imagenContainer:hover .cardbutton {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }

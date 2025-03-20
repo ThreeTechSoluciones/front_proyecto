@@ -1,0 +1,29 @@
+# Fase 1: Construcción de la aplicación
+FROM node:16-alpine AS build
+
+# Directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copiar package.json y package-lock.json
+COPY package*.json ./
+
+# Instalar las dependencias
+RUN npm install
+
+# Copiar todo el código fuente al contenedor
+COPY . .
+
+# Construir la aplicación de React
+RUN npm run build
+
+# Fase 2: Servir la aplicación con Nginx
+FROM nginx:alpine
+
+# Copiar los archivos de build al contenedor de Nginx
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Exponer el puerto 80
+EXPOSE 80
+
+# Iniciar Nginx
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,104 @@
+.contGeneral{
+    position: relative;
+    width: 20vw;
+    height: clamp(28rem,30vw,30vw);  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    /* border: 1px solid grey; */
+    box-shadow: 0 0 10px rgba(214, 177, 214, 0.332);
+    border-radius:10px;
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    
+}
+.contGeneral:hover{
+    border:none;
+    transform:  scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(214, 177, 214, 0.765); /* Agrega una sombra suave */
+}
+.contImg{
+    width: 85%;
+    height:clamp(20rem,28vw,25vw);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    overflow: hidden;
+    
+}
+.imgProducto{
+    width: 90%;           
+    height:auto;          
+    object-fit: contain;     
+    margin-top: 0px;
+    border-radius: 0px;
+    border:none;
+}
+.contDescripcion{
+    width: 100%;
+    max-height: 15vw;
+    min-height: 3vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    border: none;
+  
+}
+
+
+
+.descripcion{
+    font-size: 0.9rem;
+    margin-top:10px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(89, 89, 89, 0.765);
+
+
+}
+
+.precio{
+    font-size:1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.contCarrito{
+    width: 100%;
+    height: 2vw;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+}
+.contGeneral:hover  .contCarrito{
+    background-color: #a27eea;
+}
+.carritoIcon {
+    color: rgb(1, 1, 1); /* Cambia el color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.2s; /* Animación opcional */
+}
+.contCarrito:hover .carritoIcon {
+    transform: scale(1.2); /* Efecto al pasar el mouse */
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.8rem,1vw,1rem);
+}

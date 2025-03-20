@@ -1,0 +1,179 @@
+.contGeneral{
+    width: 100%;
+    min-height: clamp(30rem,95vh,55rem);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  
+}
+.contSuperior{
+    display: flex;
+    flex-direction: row;
+}
+.contIzq{
+    width: 50%;
+    height: clamp(30rem,95vh,55rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.contImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(15rem,25vw,28rem);
+    min-height:  clamp(15rem,10vw,28rem);
+    max-height: clamp(30rem,33vw,40rem);
+    position: relative;
+    border: none;
+    margin-top:25px;
+}
+.contImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    border:none;
+    
+}
+.contImg img:hover{
+    transform: scale(1.1);
+}
+
+.contDer{
+    width: 50%;
+    /* min-height: clamp(30rem,95vh,55rem); */
+    height: auto;
+    /* background-color: #ca9af364; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    padding-top: 90px;
+    padding-bottom: 10px;
+    
+}
+
+
+
+.contAcordeon{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.contInfo{
+    background-color: white;
+    display: flex;
+    width:70%;
+    overflow-y: auto;
+    
+}
+
+.contInfo h3{
+    width: 30%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+
+.button{ /*Ajuste de botones*/
+    display:flex;
+    background-color:rgb(10, 10, 10);
+    color: #ffffff;
+    width: 20em;
+    height: 2.9em;
+    border: none;
+    border-radius: 11px;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    transition: all 0.6s ease;
+    margin-top:20px;
+    cursor: pointer;
+    
+}
+.button:disabled {
+    background-color: #ccc;  /* Cambia el color de fondo cuando esté deshabilitado */
+    cursor: not-allowed;  /* Cambia el cursor para que se vea que no se puede hacer clic */
+    opacity: 0.5;  /* Opcional: Aplica una ligera opacidad para indicar deshabilitado */
+}
+
+.button:hover{ /*efecto cuando colocamos el cursor sobre el botón*/
+    background-color: #b598ed;
+    opacity: 1; /* Hacer visible */
+}
+
+.title{
+    color:black;
+    font-size:clamp(0.8rem,1.5vw,3rem)    
+    
+}
+
+.text{
+    font-size: 16px;
+    border:solid grey;
+    padding:5px;
+    width:50%;
+    text-align: center;
+    
+    
+}
+
+.probando{
+    border-bottom:solid 0.5 grey;
+    width:80%;
+}
+
+.contDerSecundario{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: clamp(20rem,20vw,28rem)  ;
+    min-height: 25vw;
+    height: auto;
+}
+
+.precio{
+    color:black;
+    font-size:clamp(0.8rem,1.5vw,1.5rem);
+}
+.contInferior{
+    height: auto;
+    overflow: hidden;
+    background-color:  #b498ed48;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 0 15px 0;
+    margin-bottom: 50px;
+}
+.contProductos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.botonMas{
+    height: clamp(2rem,2vw,2rem);
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #b498ed;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: #49307b;
+}
+.botonMas:hover{
+    box-shadow: 0 0 10px #b498edde;
+} 

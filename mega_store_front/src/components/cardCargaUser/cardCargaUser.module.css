@@ -1,0 +1,122 @@
+.contGeneral{
+    position: relative;
+    width: 20vw;
+    height: clamp(28rem,30vw,30vw);  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    /* border: 1px solid grey; */
+    box-shadow: 0 0 10px rgba(214, 177, 214, 0.332);
+    border-radius:10px;
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    
+}
+.contGeneral:hover{
+    border:none;
+    transform:  scale(1.05);
+    cursor: default;
+    box-shadow: 0 0 20px rgba(214, 177, 214, 0.765); /* Agrega una sombra suave */
+}
+.contImg{
+    width: 85%;
+    height:clamp(20rem,28vw,25vw);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(149, 149, 149, 0.178);
+    overflow: hidden;
+    border-radius:10px ;
+    
+}
+
+.contDescripcion{
+    width: 100%;
+    max-height: 15vw;
+    min-height: 3vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    border: none;
+  
+}
+
+
+
+.descripcion{
+    font-size: 0.9rem;
+    margin-top:10px;
+    font-family: 'Roboto', sans-serif;
+    height: 20px;
+  }
+
+
+.precio{
+    font-size:1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.contCarrito{
+    width: 100%;
+    height: 2vw;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.carritoIcon {
+    color: rgba(149, 149, 149, 0.741); /* Cambia el color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.2s; /* Animación opcional */
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.8rem,1vw,1rem);
+  }
+
+.title, .descripcion , .precio , .contImg{
+    position: relative;
+    background-color: rgba(149, 149, 149, 0.326);
+    color:transparent;
+    overflow: hidden;
+    border-radius: 10px;
+    user-select: none;
+  }
+
+.title::after, .descripcion::after, .precio::after, .contImg::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(244, 244, 244, 0.784) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+    animation: gradient-animation_2 1.2s linear infinite;
+  }
+
+  @keyframes gradient-animation_2 {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(100%);
+    }
+  }

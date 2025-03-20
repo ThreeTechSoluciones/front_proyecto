@@ -1,0 +1,71 @@
+.screen{
+    width:100%;
+    min-height:60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding:15px;
+    flex-direction: column;
+}
+
+.button{ 
+    background-color:black;
+    color: #ffffff;
+    padding-right:12px;
+    padding-left:12px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border: none;
+    border-radius: 11px;
+    transition: all 0.6s ease;
+    margin-top:15px;
+    width:150px;
+}
+/*Transición botón*/
+.button:hover{ 
+    background-color: #b598ed;
+    cursor: pointer;  
+}
+
+.image{
+    padding-top:10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.show {
+    display:block;
+    align-items: center;
+}
+
+.hide{
+    display:none;
+    align-items: center;
+}
+
+.inputFile{
+   display: flex;
+   align-items: center;
+   display: none;
+   
+}
+.alerts {
+    font-size: 9px;
+    color: red;
+    margin-top:0px;
+    margin-bottom:0px;  
+}

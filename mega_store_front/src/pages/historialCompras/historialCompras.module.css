@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Cambié el justify-content a flex-start para que empiece desde arriba */
+    width: 100%;
+    margin-top: 50px;  /* Ajusta el margen superior */
+    min-height: 30vh;   /* Asegúrate de que el contenedor tenga suficiente altura */
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-top:100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.texto{
+    margin-top: 60px;
+    font-size: 22px; /* Asegúrate de que el texto sea lo suficientemente grande */
+    font-weight: bold; /* Añadir negrita para hacerlo más visible */
+    text-align: center; /* Centra el título */
+    color: black; /* Asegúrate de que el color sea visible */
+}
+
+.listItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left !important;
+    color:black !important;
+    border-top:solid 0.8px grey;
+    width:500px !important;
+    margin-bottom:5px;
+    height: 90px !important;
+   
+}
+.listItem:hover{
+    color:#8649ff!important;
+    cursor:pointer;
+    font-weight: bold;
+}

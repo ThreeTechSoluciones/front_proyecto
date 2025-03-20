@@ -1,0 +1,129 @@
+
+.verif{
+    width: 400px !important;
+    height: 350px !important;
+    
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 30px;
+    gap: 20px;
+    
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
+    border-radius: 15px;
+    
+    /* Evita que el dialog crezca más de lo debido */
+    max-width: 400px;
+    max-height: 350px;
+
+    /* Centra en la pantalla */
+    margin: auto;
+}
+
+.mainHeading {
+    font-size: 1.4em;
+    color: rgb(15, 15, 15);
+    font-weight: 700;
+}
+
+.otpSubheading {
+    font-size: 1em;
+    color: black;
+    line-height: 17px;
+    text-align: center;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.otpinput {
+    background-color: rgb(228, 228, 228);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 7px;
+    caret-color: #c99af3;
+    color:black;
+    outline: none;
+    font-weight: 600;
+}
+
+.otpinput:focus,
+.otpinput:valid {
+    background-color: #ca9af382;
+    transition-duration: .3s;
+}
+
+.verifyButton {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: #ca9af3b4;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: .2s;
+}
+
+.verifyButton:hover {
+    background-color: #c99af3;
+    transition-duration: .2s;
+}
+
+.exitBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+    color: black;
+    font-size: 1.1em;
+    cursor: pointer;
+    z-index: 3;
+}
+.exitBtn:hover{
+    background-color: #c99af3;
+    transition-duration: .2s;
+}
+
+.resendNote {
+    font-size: 0.7em;
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.resendBtn {
+    background-color: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 100;
+    height: 30px;
+    border-radius: 15px;
+}
+.resendBtn:hover{
+    background-color: #c99af3;
+    transition-duration: .2s;
+}

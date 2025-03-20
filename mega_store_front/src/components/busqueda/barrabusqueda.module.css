@@ -1,0 +1,78 @@
+/* Contenedor principal */
+.container {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 0vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: -50px;
+}
+
+/* Barra de búsqueda */
+.mainbox {
+    box-sizing: border-box;
+    width: 100%; /* Usa todo el ancho disponible */
+    max-width: 200px; /* Máximo ancho de la barra de búsqueda */
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 160px;
+    background-color: white;
+    box-shadow: 0px 2px 8px #c99af3;
+    transition: all 0.3s ease;
+    padding: 0 10px 0 15px; /* Espaciado interno */
+}
+
+/* Caja de búsqueda */
+.search_input {
+    box-sizing: border-box;
+    width: 100%; /* Ocupa todo el espacio disponible */
+    max-width: 150px; /* Máximo ancho de la caja de búsqueda */
+    height: 40px; /* Altura fija */
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 4px 10px;
+    font-size: 1em;
+    color: black;
+    font-family: sans-serif, 'Roboto';
+    transition: all 0.3s ease;
+}
+
+.search_input::placeholder {
+    color: rgba(0, 0, 0, 0.361);
+    font-style: italic;
+}
+
+.search_button{
+    height: 80%;
+    border: none;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px #7d7c7dd9; 
+}
+.search_button:hover{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px #c99af3; 
+}
+.search_icon {
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    color: black !important;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .mainbox {
+        width: 90%; /* Barra más pequeña en pantallas pequeñas */
+        max-width: 300px; /* Máximo ancho ajustado */
+    }
+    
+    .search_input {
+        width: 100%;
+    }
+}

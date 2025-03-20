@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;            /* Hace que el div ocupe toda la altura de la pantalla */
+    width: 100%;  
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 200px;         
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:50px;
+    margin:10px;
+    border-radius: 20px;
+    border:solid 1px grey;
+    background-color: white;
+    outline: none;          /* Elimina el borde de enfoque (cuando se hace clic en el botón) */
+    box-shadow: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+button:hover{
+    cursor:pointer;
+    background-color: #b598ed;
+    cursor: pointer;
+    opacity: 1; /* Hacer visible */
+    color:white;
+    border:none;
+    box-shadow: 0 0 20px rgba(214, 177, 214, 0.765); /* Agrega una sombra suave */
+}

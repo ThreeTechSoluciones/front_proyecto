@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+font-family: 'Lato', sans-serif;
+}
+
+.body{
+    
+    display: flex; /* Habilita Flexbox en el body */
+    justify-content: start; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */    
+    text-align:center;    
+    flex-direction: column;
+    gap: 30px;  
+    font-family: lato; /* Define la tipografía */
+    min-height: 75vh;   
+    padding-top: 30px;
+    margin-top: 75px;
+}
+.form{
+    display:flex; /*para que el contenido se ajuste de forma horizontal*/
+    background-color:white;
+    font-size:15px;
+    align-items: center;
+    flex-direction: row; /* Alinea los elementos en fila */
+    gap:20px;
+    
+}
+.title{ /*Titulo pantalla administración*/
+    color:black;
+}
+    
+input {/* Espaciado inferior si el input está seguido por otro elemento */
+    padding: 15px; /* Espaciado interno en el input */
+}
+            
+.size{ /*Input marca*/
+    color:black;
+    background-color:#e4e2e0;
+    border-style: none;
+    border-radius: 20px;
+    text-align:center;
+    font-size:13px;
+    width: 400px;
+}
+
+.button{ /*Ajuste de botones*/
+    display:flex;
+    background-color:black;
+    color: #ffffff;
+    width: 8.5em;
+    height: 2.9em;
+    border: none;
+    border-radius: 11px;
+    text-align: center;
+    transition: all 0.6s ease;
+    transform: translateX(0); /* Mover hacia la posición original */
+    align-items: center;
+    gap:10px;
+   
+  
+  
+  transition: all 0.6s ease;
+    
+}
+            
+.button:hover{ /*efecto cuando colocamos el cursor sobre el botón*/
+    background-color: #b598ed;
+    cursor: pointer;
+    opacity: 1; /* Hacer visible */
+   
+    transform: translateX(5px);
+}
+            
+.container{
+    display: flex;
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+    flex-direction:column;
+    padding:0;
+}
+
+.alerts {
+    font-size: 10px;
+    color: red;
+    margin-top:0px;
+    padding: 0px;
+    text-align: center; /* Alinea el texto de la alerta al centro */
+    position:absolute;
+    top:160px;
+}

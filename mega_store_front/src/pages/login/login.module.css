@@ -1,0 +1,67 @@
+/*Pantalla completa*/
+.screen{
+    width:30vw;
+    height:30vw;
+ }
+/*Formulario de login*/
+.loginForm{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    /*border:solid 1px grey;*/
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+/*Botón*/
+.button{ 
+    display:flex;
+    background-color:black;
+    color: #ffffff;
+    padding-right:12px;
+    padding-left:12px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border: none;
+    border-radius: 11px;
+    justify-content: center;
+    transition: all 0.6s ease;
+    align-items: center;
+    margin-top:15px;
+    width:150px;
+}
+/*Transición botón*/
+.button:hover{ 
+    background-color: #b598ed;
+    cursor: pointer;  
+}
+/*Contenedores*/
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.container3{
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/*Opciones de recuperar contraseña y registro*/
+ .text{
+     font-size: 12px;
+     padding-top:8px;
+ }

@@ -1,0 +1,47 @@
+.contInfo{
+    width: 100%;
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    
+    
+    
+}
+.contInfo h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+.contInfo input{
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(58, 58, 58);
+    font-family: 'Times New Roman', Times, serif;
+    cursor: auto;
+    
+}
+.contInfo input:focus {
+    outline: none;  
+}
+.linea{
+    border-bottom: 1px solid black !important; 
+    cursor: copy;
+}
+
+.contBotones{
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.botones{
+    color: #a27eea;
+    width: 1.7vw !important;
+    height: 1.7vw !important;
+    transition: all 0.3s ease-in-out !important;
+}
+.botones:hover{
+    transform: scale(1.2);
+    color: #9c28b0;
+}

@@ -1,0 +1,214 @@
+.contGeneral{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    min-height:75vh;
+    margin-top: 50px;
+    
+}
+.imgHome{
+    width:100%;
+    height: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6vw;
+    background-image: url('./imagenes/fotoHome.webp');
+    background-size: cover;
+    color: rgb(159, 159, 159);
+    text-shadow: -5px 5px 0 white;
+
+}
+.video{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video video {
+    position: absolute;
+    top: clamp(0.2rem,0.3vw,2rem);
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video h1{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6vw;
+    color: white;
+    /* text-shadow: -3px 3px 0 rgba(185, 185, 185, 0.701); */
+    transition: text-shadow 0.5s ease;
+    text-shadow: -5px 5px 0 #ffffff81; /* Blanco inicial */
+    animation: changeTextShadow 5s infinite reverse;
+    user-select: none;
+}
+@keyframes changeTextShadow {
+    0% {
+      text-shadow: -5px 5px 0 #ffffff81; /* Blanco */
+    }
+    50% {
+      text-shadow: -5px 5px 0 #c99af3; /* Color #c99af3 */
+    }
+    100% {
+      text-shadow: -5px 5px 0 #ffffff81; /* Blanco */
+    }
+  }
+
+.botonRetorno{
+    position:fixed;
+    width: 3.5vw;
+    height: 3.5vw;
+    top: 89vh;
+    right: 3vw;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.306);
+}
+.botonRetorno:hover{
+    box-shadow: inset 0 0 15px #c99af3;
+}
+
+
+.flecha{
+    color: rgba(0, 0, 0, 0.486);
+    font-size: clamp(1rem, 2vw, 2rem);
+    transition: all 0.3s ease-in-out !important;
+}
+
+.botonRetorno:hover .flecha{
+    transform: scale(1.2) !important;
+    color: #c99af3;
+}
+
+.carga{
+    position: relative;
+    width: 100%;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./imagenes/fotoCargaProductos.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    margin-top: 50px;
+    z-index: 0;
+}
+.carga::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.42);
+    z-index: -1;
+}
+
+.carga h1{
+    font-size: 2rem;
+    color:white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.721);
+    z-index: 1;
+}
+
+.contImg{
+    width: 100%;
+    height: 35vw;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    /* gap: 10%; */
+}
+.img{
+    position: relative;
+    flex: 1 ;
+    max-width: 25vw;
+    height: 100%;
+    background-color: transparent;
+    box-shadow:  5px 15px 20px rgba(0, 0, 0, 0.351);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.img img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.frente{
+    background-color: rgba(0, 0, 0, 0.525);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    cursor: default;
+    border-radius: 10px;
+    user-select: none;
+}
+.img:hover{ 
+    box-shadow:  15px 15px 5px #ca9af3a5;
+    transform: scale(1.05);
+}
+.img:hover .frente{
+    opacity: 1;
+}
+
+.contCatalogo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('./imagenes/fondo2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.contCatalogo::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgb(255, 255, 255);
+opacity: 0.75;
+z-index: -1;
+}

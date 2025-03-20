@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9; /* Color de fondo suave */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.error {
+    color: #d02525;
+    font-size: 13px;
+    font-weight: 300;
+}
+.input {
+    margin-bottom: 20px;
+}
+
+img {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+}
+

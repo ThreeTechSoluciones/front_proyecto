@@ -1,0 +1,25 @@
+.contGeneral{
+    /* width: clamp(10rem, 25vw, 30rem); */
+    width: 100%;
+    
+}
+.mensaje{
+    color: rgb(39, 39, 39);
+    text-shadow: 0 0 5px rgba(83, 83, 83, 0.415);
+    font-size: 1rem;
+}
+
+.botonFiltro{
+    background-color: #c99af3 !important;
+    transition: all 0.3s ease-in-out;
+}
+.botonFiltro:hover{
+    background-color: #ac4efe !important;
+}
+.botonFiltroLimp:hover{
+    background-color: #ac4efe !important;
+}
+
+.botonFiltro, .botonFiltroLimp{
+    margin-top: 10px !important;
+}

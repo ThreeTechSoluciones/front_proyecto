@@ -1,0 +1,84 @@
+.contGeneral{
+    position: relative;
+    width: 20vw;
+    height: clamp( 15rem ,25vw, 25rem); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(214, 177, 214, 0.332);
+    border-radius:10px;
+    transition: all 0.4s ease-in-out;
+   background-color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    
+}
+.contGeneral:hover{
+    border:none;
+    transform:  scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(214, 177, 214, 0.765); /* Agrega una sombra suave */
+}
+.contImg{
+    width: 70%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+.imgProducto{                    
+    object-fit: cover;     
+    margin-top: 0px;
+    border-radius: 0px;
+    border:none;
+}
+
+
+.precio{
+    font-size:1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.contCarrito{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: auto;
+    height: 2vw;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+    background-color: #a27eea;
+    border-bottom-left-radius: 10px; /* Esquina inferior izquierda */
+    border-bottom-right-radius: 10px; /* Esquina inferior derecha */
+}
+
+.contGeneral:hover  .contCarrito{
+    box-shadow: 3px 3px 5px #b08ef5fb;
+}
+.carritoIcon {
+    color: rgb(1, 1, 1); /* Cambia el color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.2s; /* Animación opcional */
+}
+.contCarrito:hover .carritoIcon {
+    transform: scale(1.2); /* Efecto al pasar el mouse */
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.8rem,1vw,1rem);
+}

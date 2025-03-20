@@ -1,0 +1,58 @@
+.screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: start;
+    padding-top: 30px;
+    overflow-y: auto; /* Permite el scroll vertical */
+    min-height: 70vh;
+    margin-top: 75px;
+    width: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:25px;
+    
+}
+.container2{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.text {
+    position: relative;   /* Necesario para el pseudo-elemento */
+    color: #000;          /* Color del texto */
+    text-decoration: none; /* Elimina cualquier subrayado por defecto */
+    font-size: 22px;
+    cursor:pointer;
+    margin-left:25px;
+    margin-right:25px;
+    background: none;
+    border:none;
+    border-radius: 20px;
+    padding:0 10px 0 10px ;
+    overflow: hidden;
+  }
+  
+  .text::after {
+    content: '';                          /* Pseudo-elemento vacío */
+    position: absolute;
+    left: 0;
+    bottom: 0;                            /* Se coloca justo debajo del texto */
+    width: 100%;
+    height: 2px;                          /* Grosor del subrayado */
+    background-color:black;            /* Color del subrayado */
+    transform: scaleX(0);                 /* Comienza oculto */
+    transform-origin: bottom right;       /* Animación de derecha a izquierda */
+    transition: transform 0.3s ease;      /* Duración de la transición */
+  }
+  
+  .text:hover::after {
+    transform: scaleX(1);                 /* Expande el subrayado en hover */
+    transform-origin: bottom left;        /* Cambio de origen para expandirse */
+  }
