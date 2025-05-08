@@ -1,6 +1,7 @@
 export const API_ROUTES = {
     //BASE
-    BASE: "https://megastore.dealbera.online",
+   // BASE: "https://megastore.dealbera.online",
+    BASE: "http://localhost:8080",
     //LOGIN
     LOGIN:"/auth/login",
 
