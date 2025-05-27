@@ -9,8 +9,8 @@ jest.mock("../components/avatar/fotoPerfil.tsx", () => (props) => {
   return <img {...props} />;
 });
 
-describe("U9-001: Validar que nombre sea un campo obligatorio", () => {
-  test("Muestra mensaje de error si el campo nombre está vacío y se intenta guardar", async () => {
+describe("Actualización de información personal", () => {
+  test("U9-001: Validar que nombre sea un campo obligatorio", async () => {
     render(
       <PerfilProvider>
         <Perfil />
@@ -28,6 +28,26 @@ describe("U9-001: Validar que nombre sea un campo obligatorio", () => {
     //Esperamos encontrar el mensaje de error
     expect(
       await screen.findByText("Nombre no puede estar vacío.")
+    ).toBeInTheDocument();
+  });
+
+  test("U9-003: Mostrar mensaje de error cuando nombre contenga espacios consecutivos.", async () => {
+    render(
+      <PerfilProvider>
+        <Perfil />
+      </PerfilProvider>
+    );
+
+    const inputNombre = screen.getByLabelText(/nombre/i);
+    const botonGuardar = screen.getByRole("button", { name: /guardar/i });
+
+    // Simular ingreso de nombre con espacios consecutivos
+    fireEvent.change(inputNombre, { target: { value: "Luciana  Martinez" } });
+    fireEvent.click(botonGuardar);
+
+    // Verificar que se muestre el mensaje de error correcto
+    expect(
+      await screen.findByText("Nombre no puede contener espacios consecutivos")
     ).toBeInTheDocument();
   });
 });
