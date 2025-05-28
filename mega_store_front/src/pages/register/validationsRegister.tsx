@@ -10,9 +10,9 @@ const validationsRegister=z.object({
       .refine((val) => !(val.length === 1 && val === ' '), { message: 'Nombre no puede estar vacío.' }) ,
     email:z
       .string()
-      .email({message:"Formato inválido de email"})
-      .regex(/^(?!.*\s{2,}).*$/, { message: "Email no puede contener espacios consecutivos"})
-      .refine((val) => !(val.length === 1 && val === ' '), { message: 'Email no puede estar vacío.' }) ,
+      .min(1, { message: 'Email no puede estar vacío.' }) 
+  .regex(/^(?!.*\s{2,}).*$/, { message: 'Email no puede contener espacios consecutivos' }) 
+  .email({ message: 'Formato inválido de email' }) ,
     password:z
       .string()
       .min(1, { message: 'Contraseña no puede estar vacío.' })
