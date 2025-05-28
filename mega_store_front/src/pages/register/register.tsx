@@ -127,7 +127,7 @@ const Register: React.FC = () => {
         endAdornment={
             <InputAdornment position="end">
                 <IconButton
-                    aria-label={showConfirmation ? 'hide the password' : 'display the password'}
+                    aria-label={showConfirmation ? 'hide the confirmation' : 'display the confirmation'}
                     onClick={handleClickShowConfirmation}
                     onMouseDown={handleMouseDownPassword}
                     onMouseUp={handleMouseUpPassword}
