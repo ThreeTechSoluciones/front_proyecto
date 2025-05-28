@@ -66,7 +66,7 @@ const Register: React.FC = () => {
                 noValidate
                 autoComplete="off"
             ><TextField 
-                id="standard-basic" 
+                id="name" 
                 label="Nombre" 
                 variant="standard"
                 type="text" 
@@ -80,7 +80,7 @@ const Register: React.FC = () => {
                 noValidate
                 autoComplete="off"
             ><TextField 
-                id="standard-basic" 
+                id="email" 
                 variant="standard"
                 label="Email"
                 type="text" 
@@ -93,9 +93,9 @@ const Register: React.FC = () => {
             <div >
                 <div>
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-    <InputLabel htmlFor="standard-adornment-password">Contraseña</InputLabel>
+    <InputLabel htmlFor="password">Contraseña</InputLabel>
     <Input
-        id="standard-adornment-password"
+        id="password"
         type={showPassword ? 'text' : 'password'}
         color="secondary"
         endAdornment={
@@ -119,9 +119,9 @@ const Register: React.FC = () => {
             <div className={Style.container2}>
                 <div>
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-    <InputLabel htmlFor="standard-adornment-confirmacion">Confirmar contraseña</InputLabel>
+    <InputLabel htmlFor="password_confirmation">Confirmar contraseña</InputLabel>
     <Input
-        id="standard-adornment-confirmacion"
+        id="password_confirmation"
         type={showConfirmation ? 'text' : 'password'}
         color="secondary"
         endAdornment={
