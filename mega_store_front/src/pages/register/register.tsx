@@ -72,7 +72,7 @@ const Register: React.FC = () => {
                 type="text" 
                 {...registerRegister('nombre')} />
             </Box>
-            {errorsRegister.nombre && typeof errorsRegister.nombre.message === 'string' && (<p className={Style.alerts}>{errorsRegister.nombre.message}</p>)}
+            {errorsRegister.nombre && typeof errorsRegister.nombre.message === 'string' && (<p data-testid="NameAlerts" className={Style.alerts}>{errorsRegister.nombre.message}</p>)}
             {/* EMAIL*/}
             <Box
                 component="form"
@@ -88,7 +88,7 @@ const Register: React.FC = () => {
             />
             
             </Box>
-            {errorsRegister.email && typeof errorsRegister.email.message === 'string' && (<p className={Style.alerts}>{errorsRegister.email.message}</p>)}
+            {errorsRegister.email && typeof errorsRegister.email.message === 'string' && (<p data-testid="EmailAlerts" className={Style.alerts}>{errorsRegister.email.message}</p>)}
             {/* CONTRASEÑA */}
             <div >
                 <div>
@@ -113,7 +113,7 @@ const Register: React.FC = () => {
         {...registerRegister('password')} // Registrar el campo contraseña
     />
 </FormControl>
-{errorsRegister.password && typeof errorsRegister.password.message === 'string' && (<p className={Style.alerts}>{errorsRegister.password.message}</p>)}
+{errorsRegister.password && typeof errorsRegister.password.message === 'string' && (<p data-testid="PasswordAlerts" className={Style.alerts}>{errorsRegister.password.message}</p>)}
                 
             {/*CONFIRMACIÓN CONTRASEÑA*/}
             <div className={Style.container2}>
@@ -140,7 +140,7 @@ const Register: React.FC = () => {
         
     />
 </FormControl>
-{errorsRegister.confirmacion && typeof errorsRegister.confirmacion.message === 'string' && (<p className={Style.alerts}>{errorsRegister.confirmacion.message}</p>)}
+{errorsRegister.confirmacion && typeof errorsRegister.confirmacion.message === 'string' && (<p data-testid="ConfirmationAlerts" className={Style.alerts}>{errorsRegister.confirmacion.message}</p>)}
     </div>
             </div>
             {/*DIRECCIÓN DE ENVÍO*/} 
@@ -157,7 +157,7 @@ const Register: React.FC = () => {
                 type="text" 
                 {...registerRegister('direccionEnvio')} // Registrar el campo nombre
             />
-            {errorsRegister.direccionEnvio && typeof errorsRegister.direccionEnvio.message === 'string' && (<p className={Style.alerts}>{errorsRegister.direccionEnvio.message}</p>)}
+            {errorsRegister.direccionEnvio && typeof errorsRegister.direccionEnvio.message === 'string' && (<p  className={Style.alerts}>{errorsRegister.direccionEnvio.message}</p>)}
 
             </Box> 
                 

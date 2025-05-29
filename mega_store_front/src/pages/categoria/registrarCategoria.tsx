@@ -39,7 +39,7 @@ const RegistrarCategoria: React.FC = () => {
 
 
   return (
-    <div className={style.body}>
+    <div id="categoria_container" className={style.body}>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
         <h3 className={style.title}>Nueva Categoría</h3>
         <div className={style.container}>
@@ -51,7 +51,7 @@ const RegistrarCategoria: React.FC = () => {
           />
           {
             errors.nombre?.message && 
-            <p className={style.alerts}>{errors.nombre.message}</p> // Mostramos el error si existe
+            <p data-testid="CategoryAlerts"className={style.alerts}>{errors.nombre.message}</p> // Mostramos el error si existe
           }
         </div>
         <button className={style.button} type="submit">

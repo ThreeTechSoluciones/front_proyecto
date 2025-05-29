@@ -46,12 +46,12 @@ export default function CheckboxList() {
       eliminarCategoria(objectEliminar)
   }
 
-
+  console.log("perro1", categorias)
   return (
 
     <List className={Style.list}>
 
-      {(categorias ?? [1,2,3]).map ((categoria, idx) => {
+      {categorias && categorias.map ((categoria, idx) => {
         const labelId = `checkbox-list-label-${idx}`;
         return (
           <div className={Style.container} key={categoria.id}>
@@ -61,6 +61,7 @@ export default function CheckboxList() {
               > 
               <ListItemText 
                 id={labelId} 
+                data-testid="CategoryName"
                 primary={`${categoria.nombre}`} 
                 className={Style.item} 
                 onClick={()=>handleClick (categoria)}/>

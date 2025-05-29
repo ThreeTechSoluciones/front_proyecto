@@ -1,9 +1,9 @@
-import * as React from "react";
+
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Style from "./perfil.module.css";
 import ImageAvatars from "../../components/avatar/fotoPerfil";
-import { useEffect, useRef, useState } from "react";
+import React,{ useEffect, useRef, useState } from "react";
 import { InputAdornment } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { zodResolver } from "@hookform/resolvers/zod";

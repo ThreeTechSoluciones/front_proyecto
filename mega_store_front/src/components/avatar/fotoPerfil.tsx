@@ -1,6 +1,6 @@
 
 import Avatar from '@mui/material/Avatar';
-
+import React from "react";
 
 interface ImageAvatarsProps {
   src: string; // Declaramos la prop src que será de tipo string

@@ -8,27 +8,36 @@ import RegistrarCategoria from "../pages/categoria/registrarCategoria";
 import {CategoriaProvider} from "../contexts/CategoriaContext";
 import "@testing-library/jest-dom";
 import {ToastContainer } from 'react-toastify';
-import { newCategoria } from "../service/CategoriaService";
+import { 
+  newCategoria ,
+  getCategorias
+  } from "../service/CategoriaService";
+
 
 jest.mock('../service/CategoriaService', () => ({
   newCategoria: jest.fn(),
+  getCategorias:jest.fn(),
 }));
 
 
 
 describe("Categoría component", () => {
 
- test ("U2F-001: Validar caracteres no permitidos", async()=>{
-    render(
+  beforeEach(()=>render(
       <CategoriaProvider>
-        <RegistrarCategoria />
+          <RegistrarCategoria />
+        <ToastContainer />
       </CategoriaProvider>
-    );
+    ))
+
+
+  test ("U2F-001: Validar caracteres no permitidos", async()=>{
     const input= screen.getByPlaceholderText("Categoría")
     const button = screen.getByRole ("button", {name:"Registrar"})
     fireEvent.change (input, {target:{value:"! # $ % & / ( ) = ? ¡ ¿ * + , ; : . _ - @ ^ ~ [ ] { } < > \ | )"}})
     fireEvent.click(button);
-    expect(await screen.findByText("Categoría contiene caracteres no permitidos.")).toBeInTheDocument();
+    const alert = await screen.findByTestId("CategoryAlerts");
+    expect(alert).toHaveTextContent("Categoría contiene caracteres no permitidos.");
  })
 
 
@@ -43,70 +52,52 @@ describe("Categoría component", () => {
         }
       }
     });
-  
-    render(
-      <CategoriaProvider>
-        <RegistrarCategoria />
-        <ToastContainer />
-      </CategoriaProvider>
-    );
-  
     const input = screen.getByPlaceholderText("Categoría");
     const button = screen.getByRole("button", { name: "Registrar" });
     fireEvent.change(input, { target: { value: "L" } });
     fireEvent.click(button);
-  
     expect(await screen.findByText(/Ya existe una categoría con ese nombre/i)).toBeInTheDocument();
   });
 
+
   test("U2F-003: Registrar categoría con éxito", async () => {
     newCategoria.mockResolvedValue({
-      
-        response: {
           status: 200,
-          data: { message: "OK",
-            data:{ nombre: 'L' } ,
-            errors: null}
-        }
-      
+          message: "Categoria guardada",
+          errors: null,
+          data:{ nombre: 'Remeras' } ,   
     });
-    render(
-      <CategoriaProvider>
-        <RegistrarCategoria />
-        <ToastContainer /> 
-      </CategoriaProvider>
-    );
+    getCategorias.mockResolvedValue({
+          status: 200,
+          message: "OK",
+          errors: null,
+          data: [{nombre: 'Categoría Remeras registrada'}]  ,    
+    });
     const input = screen.getByPlaceholderText("Categoría");
     const button = screen.getByRole("button", { name: "Registrar" });
-    fireEvent.change(input, { target: { value: "L" } });
+    fireEvent.change(input, { target: { value: "Remeras" } });
     fireEvent.click(button);
-    expect(await screen.findByText("Categoria L registrada")).toBeInTheDocument();
+    const nameCategory = await screen.findByTestId("CategoryName");
+    expect(await nameCategory).toHaveTextContent("Remeras");
+    expect(await screen.findByText("Categoría Remeras registrada")).toBeInTheDocument();
   });
 
 
   test("U2F-006: Validar longitud de campo.", async () => {
-    render(
-      <CategoriaProvider>
-        <RegistrarCategoria />
-      </CategoriaProvider>
-    );
     const input = screen.getByPlaceholderText("Categoría");
     const button = screen.getByRole("button", { name: "Registrar" });
     fireEvent.change(input, { target: { value: "a".repeat(101) } });
     fireEvent.click(button);
-    expect(await screen.findByText("Categoría no puede superar los 100 caracteres")).toBeInTheDocument();
+    const alert = await screen.findByTestId("CategoryAlerts");
+    expect(alert).toHaveTextContent("Categoría no puede superar los 100 caracteres");
   });
 
   test ("U2F-007: Validar campo como obligatorio", async()=>{
-    render(
-      <CategoriaProvider>
-        <RegistrarCategoria />
-      </CategoriaProvider>
-    );
     const input = screen.getByPlaceholderText("Categoría")
     const button = screen.getByRole("button", {name:"Registrar"})
     fireEvent.change(input,{target:{value:""}});
     fireEvent.click(button);
-    expect(await screen.findByText("Categoría no puede estar vacío.")).toBeInTheDocument();
+    const alert = await screen.findByTestId("CategoryAlerts");
+    expect(alert).toHaveTextContent("Categoría no puede estar vacío");
   })
 });

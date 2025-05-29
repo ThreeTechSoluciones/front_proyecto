@@ -44,6 +44,7 @@ export const CategoriaProvider: React.FC<CategoriaProviderProps> = ({ children }
     setError(null); // Limpiamos el error antes de la llamada
     try {
       const response = await getCategorias();
+      console.log("perro2", response)
       setCategorias(response.data); 
 
     } catch (err: any) {
@@ -60,11 +61,11 @@ export const CategoriaProvider: React.FC<CategoriaProviderProps> = ({ children }
     try{
         setLoading(true)
         const response = await newCategoria(dato) //post
-       
         await fetchCategorias(); //Recargamos 
-        Notificaciones.exito(`Categoria ${response.data.nombre} registrada`) //mensaje
+        Notificaciones.exito(`Categoría ${response.data.nombre} registrada`) //mensaje
 
     }catch(error:any){
+
         if (error) {
             Notificaciones.error(error.response?.data.errors)
             console.log(error.response?.data.errors);  // Accediendo a 'errors'

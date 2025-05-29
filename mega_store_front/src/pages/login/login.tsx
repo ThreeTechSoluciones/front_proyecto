@@ -100,7 +100,7 @@ const Login: React.FC = () => {
                 </div>
             {/*Opciones para registro y recuperación de contraseña*/}
             <div className={Style.container3}>
-                <a className={Style.text} href="/appsRami/cambioContraseña">¿Olvidaste tu contraseña?</a>
+                <a id-test="RecupLink" className={Style.text} href="/appsRami/cambioContraseña">¿Olvidaste tu contraseña?</a>
 
                 <button type="submit" className={Style.button}>
                    {loading ? 'Cargando..': 'Ingresar'}
