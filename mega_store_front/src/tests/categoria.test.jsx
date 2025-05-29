@@ -3,14 +3,9 @@ import {
   screen,
   render,
   fireEvent,
-  getByPlaceholderText,
-  getByRole,
-} from "@testing-library/react";
+  } from "@testing-library/react";
 import RegistrarCategoria from "../pages/categoria/registrarCategoria";
-import {
-  CategoriaProvider,
-  useCategoriaContext,
-} from "../contexts/CategoriaContext";
+import {CategoriaProvider} from "../contexts/CategoriaContext";
 import "@testing-library/jest-dom";
 import {ToastContainer } from 'react-toastify';
 import { newCategoria } from "../service/CategoriaService";
@@ -23,7 +18,7 @@ jest.mock('../service/CategoriaService', () => ({
 
 describe("Categoría component", () => {
 
- test ("U2-001: Validar caracteres no permitidos", async()=>{
+ test ("U2F-001: Validar caracteres no permitidos", async()=>{
     render(
       <CategoriaProvider>
         <RegistrarCategoria />
@@ -33,13 +28,11 @@ describe("Categoría component", () => {
     const button = screen.getByRole ("button", {name:"Registrar"})
     fireEvent.change (input, {target:{value:"! # $ % & / ( ) = ? ¡ ¿ * + , ; : . _ - @ ^ ~ [ ] { } < > \ | )"}})
     fireEvent.click(button);
-    expect(
-      await screen.findByText("Categoría contiene caracteres no permitidos.")
-    ).toBeInTheDocument();
+    expect(await screen.findByText("Categoría contiene caracteres no permitidos.")).toBeInTheDocument();
  })
 
 
-  test("U2-002: Verificar rechazo si la categoría ya está registrada", async () => {
+  test("U2F-002: Verificar rechazo si la categoría ya está registrada", async () => {
     newCategoria.mockRejectedValueOnce({
       response: {
         status: 400,
@@ -66,7 +59,7 @@ describe("Categoría component", () => {
     expect(await screen.findByText(/Ya existe una categoría con ese nombre/i)).toBeInTheDocument();
   });
 
-  test("U2-003: Registrar categoría con éxito", async () => {
+  test("U2F-003: Registrar categoría con éxito", async () => {
     newCategoria.mockResolvedValue({
       
         response: {
@@ -91,7 +84,7 @@ describe("Categoría component", () => {
   });
 
 
-  test("U2-006: Validar longitud de campo.", async () => {
+  test("U2F-006: Validar longitud de campo.", async () => {
     render(
       <CategoriaProvider>
         <RegistrarCategoria />
@@ -101,9 +94,7 @@ describe("Categoría component", () => {
     const button = screen.getByRole("button", { name: "Registrar" });
     fireEvent.change(input, { target: { value: "a".repeat(101) } });
     fireEvent.click(button);
-    expect(
-      await screen.findByText("Categoría no puede superar los 100 caracteres")
-    ).toBeInTheDocument();
+    expect(await screen.findByText("Categoría no puede superar los 100 caracteres")).toBeInTheDocument();
   });
 
   test ("U2F-007: Validar campo como obligatorio", async()=>{
@@ -116,8 +107,6 @@ describe("Categoría component", () => {
     const button = screen.getByRole("button", {name:"Registrar"})
     fireEvent.change(input,{target:{value:""}});
     fireEvent.click(button);
-    expect(
-      await screen.findByText("Categoría no puede estar vacío.")
-    ).toBeInTheDocument();
+    expect(await screen.findByText("Categoría no puede estar vacío.")).toBeInTheDocument();
   })
 });
