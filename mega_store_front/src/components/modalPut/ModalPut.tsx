@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ModalPut.module.css";
 import Dialog from "@mui/material/Dialog"; // Dialog (se usa como un modal)
 import DialogContent from "@mui/material/DialogContent"; // Contenido del modal de Material UI

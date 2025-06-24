@@ -1,6 +1,4 @@
-
-import Avatar from '@mui/material/Avatar';
-import React from "react";
+import Avatar from "@mui/material/Avatar";
 
 interface ImageAvatarsProps {
   src: string; // Declaramos la prop src que será de tipo string
@@ -9,8 +7,11 @@ interface ImageAvatarsProps {
   height: string;
 }
 
-export default function ImageAvatars({ src, alt, width, height }: ImageAvatarsProps) {
-  return (
-      <Avatar alt={alt} src={src} sx={{ width: width, height: height }}/>
-  );
+export default function ImageAvatars({
+  src,
+  alt,
+  width,
+  height,
+}: ImageAvatarsProps) {
+  return <Avatar alt={alt} src={src} sx={{ width: width, height: height }} />;
 }

@@ -4,7 +4,6 @@ describe("validationsPerfil - nombre", () => {
   const schema = validationsPerfil;
 
   const baseData = {
-    apellido: "Martinez",
     email: "luciana@email.com",
     direccionEnvio: "calle 123",
     numeroTelefono: "12345678",
